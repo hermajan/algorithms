@@ -11,18 +11,18 @@ public class Exponentiation {
      */
     public static void main(String[] args) {
         System.out.println(power(2,10));
-        System.out.println(power2(2,10));
-        System.out.println(power3(2,-3));
-        
-        /**
-         * Time measurement.
-         * @see http://stackoverflow.com/questions/1770010/how-do-i-measure-time-elapsed-in-java
-        */
-        //System.out.println(System.nanoTime()+" ns");
+        System.out.println(powerLog(2,10));
+        System.out.println(powerNegative(2,-3));
+        System.out.println(powerRecursive(2,10));     
     }
     
-    public static double power(double base, int exp) {
-        //System.out.println(System.nanoTime()+" ns");
+    /**
+     * Exponentiation with linear asymptotic complexity (Θ(n)).
+     * @param base Real number.
+     * @param exp Natural number.
+     * @return Result of the exponentiation.
+     */
+    public static double power(double base,int exp) {
         if(exp<=0) { return 0; }
         double output=1;
         for(int i=exp;i>=1;i--) {
@@ -30,7 +30,13 @@ public class Exponentiation {
         }
         return output;
     }
-    public static double power2(double base, int exp) {
+    /**
+     * Exponentiation with logarithmic asymptotic complexity (Θ(log n)).
+     * @param base Real number.
+     * @param exp Non-negative integer.
+     * @return Result of the exponentiation.
+     */
+    public static double powerLog(double base,int exp) {
         double output=1;
         while(exp>0) {
             if(exp%2==1) { output=output*base; }
@@ -41,12 +47,22 @@ public class Exponentiation {
     }
     /**
      * Exponentiation, which works with negative numbers.
-     * @param base
-     * @param exp
-     * @return 
+     * @param base Real number.
+     * @param exp Integer.
+     * @return Result of the exponentiation.
     */
-    public static double power3(double base, int exp) {
+    public static double powerNegative(double base,int exp) {
         if(exp>0) { return power(base,exp); }
         else { return 1/power(base,-exp); }
+    }
+    /**
+     * Recursive exponentiation.
+     * @param base Real number.
+     * @param exp Non-negative integer.
+     * @return Result of the exponentiation.
+     */
+    public static double powerRecursive(double base,int exp) {
+        if(exp==0) { return 1; }
+        else { return base*powerRecursive(base,exp-1); }
     }
 }
