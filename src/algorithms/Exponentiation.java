@@ -7,29 +7,20 @@ package algorithms;
  */
 public class Exponentiation {
     /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        System.out.println(power(2,10));
-        System.out.println(powerLog(2,10));
-        System.out.println(powerNegative(2,-3));
-        System.out.println(powerRecursive(2,10));     
-    }
-    
-    /**
      * Exponentiation with linear asymptotic complexity (Θ(n)).
      * @param base Real number.
      * @param exp Natural number.
      * @return Result of the exponentiation.
      */
     public static double power(double base,int exp) {
-        if(exp<=0) { return 0; }
+        if(exp<=0) { return 1; }
         double output=1;
         for(int i=exp;i>=1;i--) {
             output=output*base;
         }
         return output;
     }
+    
     /**
      * Exponentiation with logarithmic asymptotic complexity (Θ(log n)).
      * @param base Real number.
@@ -45,6 +36,7 @@ public class Exponentiation {
         }
         return output;
     }
+    
     /**
      * Exponentiation, which works with negative numbers.
      * @param base Real number.
@@ -55,6 +47,7 @@ public class Exponentiation {
         if(exp>0) { return power(base,exp); }
         else { return 1/power(base,-exp); }
     }
+    
     /**
      * Recursive exponentiation.
      * @param base Real number.
