@@ -3,19 +3,8 @@ package algorithms;
 /**
  * Implementations of the factorial.
  * @author DJohnny
- * @see http://en.wikipedia.org/wiki/Factorial
  */
 public class Factorial {
-    /**
-     * Recursive algorithm for calculating factorial.
-     * @param number Non-negative integer.
-     * @return Factorial of the number.
-     */
-    public static long factorialRecursion(long number) {
-        if(number==0) { return 1; }
-        return number*factorialRecursion(number-1);
-    }
-    
     /**
      * Iterative algorithm for calculating factorial.
      * @param number Non-negative integer.
@@ -28,5 +17,15 @@ public class Factorial {
             output=output*(number-i);
         }
         return output;
+    }
+    
+    /**
+     * Recursive algorithm for calculating factorial.
+     * @param number Non-negative integer.
+     * @return Factorial of the number.
+     */
+    public static long factorialRecursive(long number) {
+        if(number==0) { return 1; }
+        return number*factorialRecursive(number-1);
     }
 }
