@@ -1,4 +1,4 @@
-package algorithms;
+package algorithms.math;
 
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
