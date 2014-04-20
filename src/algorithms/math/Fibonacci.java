@@ -1,5 +1,8 @@
 package algorithms.math;
 
+import static java.lang.Math.pow;
+import static java.lang.Math.sqrt;
+
 /**
  * Implementations of the Fibonacci number.
  * @author DJohnny
@@ -37,7 +40,7 @@ public class Fibonacci {
      * @return Fibonacci number.
      */
     public static int fibBinet(int n) {
-        double f=(1+Math.sqrt(5))/2;
-        return (int)((Math.pow(f, n)-Math.pow(-f, -n))/Math.sqrt(5));
+        double f=(1+sqrt(5))/2;
+        return (int)((pow(f, n)-pow(-f, -n))/sqrt(5));
     }
 }
