@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Binary</title>
+    
+    <script async type="application/dart" src="binary.dart"></script>
+    <script async src="dart.js"></script>
+    <script src="binary.js"></script>
+  </head>
+  <body>
+    <form>
+        <input type="number" name="number" id="num" value="0" title="Decimal number to convert.">
+    </form>
+    
+    <h3>Dart</h3>
+    <div id="binDart">0</div>
+    
+    <h3>JavaScript</h3>
+    <div id="binJavaScript">0</div>
+    <script type="text/javascript">
+        var number = window.location.search.replace("?number=", '');
+		document.getElementById('num').value=number;
+		
+        document.getElementById("num").addEventListener("input", function(){
+			var num=document.getElementById('num').value;
+			document.getElementById("binJavaScript").innerHTML=dec2bin(num);
+		});
+    </script>
+  </body>
+</html>
