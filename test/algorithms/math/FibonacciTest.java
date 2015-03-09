@@ -8,9 +8,22 @@ import org.junit.Test;
  * @author DJohnny
  */
 public class FibonacciTest {
-    /**
-     * Test of fibRecursive method, of class Fibonacci.
-     */
+	/**
+	 * Test of fibIterative method, of class Fibonacci.
+	 */
+	@Test
+	public void testFibIterative() {
+		System.out.println("fibIterative");
+		assertEquals(1, Fibonacci.fibIterative(1));
+		assertEquals(1, Fibonacci.fibIterative(2));
+		assertEquals(8, Fibonacci.fibIterative(6));
+		assertEquals(55, Fibonacci.fibIterative(10));
+		assertEquals(144, Fibonacci.fibIterative(12));
+	}
+	
+	/**
+	 * Test of fibRecursive method, of class Fibonacci.
+	 */
     @Test
     public void testFibRecursive() {
         System.out.println("fibRecursive");
@@ -19,19 +32,6 @@ public class FibonacciTest {
         assertEquals(8, Fibonacci.fibRecursive(6));
         assertEquals(55, Fibonacci.fibRecursive(10));
         assertEquals(144, Fibonacci.fibRecursive(12));
-    }
-
-    /**
-     * Test of fibIterative method, of class Fibonacci.
-     */
-    @Test
-    public void testFibIterative() {
-        System.out.println("fibIterative");
-        assertEquals(1, Fibonacci.fibIterative(1));
-        assertEquals(1, Fibonacci.fibIterative(2));
-        assertEquals(8, Fibonacci.fibIterative(6));
-        assertEquals(55, Fibonacci.fibIterative(10));
-        assertEquals(144, Fibonacci.fibIterative(12));
     }
 
     /**
@@ -46,5 +46,5 @@ public class FibonacciTest {
         assertEquals(55, Fibonacci.fibBinet(10));
         assertEquals(144, Fibonacci.fibBinet(12));
     }
-
 }
+
