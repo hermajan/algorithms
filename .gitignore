@@ -10,3 +10,8 @@
 manifest.mf
 /build/
 /doc/
+
+.idea
+__pycache__
+__init__.py
+
