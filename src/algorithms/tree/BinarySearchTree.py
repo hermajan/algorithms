@@ -47,7 +47,8 @@ class BinarySearchTree:
 
 	def search(tree, node, key):
 		"""
-		Searches key in tree.
+		Searches for key in tree starting from node.
+		:param tree: Tree where to search.
 		:param node: Node where searching will be started.
 		:param key: Key which will be searched.
 		:return: Node with searched key, if key isn't in tree then returns None.
@@ -100,7 +101,7 @@ class BinarySearchTree:
 
 	def minimum(self, node):
 		"""
-		Searches minimum of tree.
+		Searches for minimum of tree.
 		:param node: Node where searching will be started.
 		:return: Node with minimum.
 		"""
@@ -113,7 +114,7 @@ class BinarySearchTree:
 
 	def maximum(self, node):
 		"""
-		Searches maximum of tree.
+		Searches for maximum of tree.
 		:param node: Node where searching will be started.
 		:return: Node with maximum.
 		"""
